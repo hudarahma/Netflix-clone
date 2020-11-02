@@ -29,9 +29,18 @@ const setMoveiDetail = (details) => {
     movieOverview.innerText = details.overview;
 
     let movieAverage = document.getElementById('vote-average');
-    movieAverage.innerText = details.vote_average;
+    movieAverage.innerText =  details.vote_average; 
 
-    
+    let movieDate = document.getElementById('date');
+    movieDate.innerText = details.release_date;
+
+    let movieDuration = document.getElementById('run-time');
+    movieDuration.innerText = details.runtime;
+
+    let movieStatus = document.getElementById('status');
+    movieStatus.innerText = details.status;
+
+
    
 }
 
@@ -89,7 +98,8 @@ const handleMovieSelection = (e) => {
 function showMovies(movies, element_selector, path_type ){
 
     var moviesEl = document.querySelector(element_selector);
-    for(var movie of movies.results){
+
+    movies.results.forEach(movie => {
         var imageElement = document.createElement('img');
         imageElement.setAttribute('data-id', movie.id);
         imageElement.src = `https://image.tmdb.org/t/p/original${movie[path_type]}`;
@@ -101,10 +111,12 @@ function showMovies(movies, element_selector, path_type ){
             console.log(e);
             handleMovieSelection(e);
             getMovieDetail(movie.id);
+            console.log(movie.id);
             
         })
         moviesEl.appendChild(imageElement);
-    }
+    })
+   
 }
 
 function fetchMovies(url, element_selector, path_type ){
