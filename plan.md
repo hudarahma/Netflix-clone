@@ -10,6 +10,10 @@ October 29
 
 
 
+--Grab all genres titles and loop through them
+-- Use the same API as we used before
+-- Grab the movies for each genre
+
 Octuber 22
 
 -Show the trailer for the movie when they select the movie
