@@ -96,6 +96,15 @@ const handleMovieSelection = (e) => {
 }
 
 
+function closeModal(){
+    
+    const iframe = document.getElementById('movieTrailer');
+    iframe.src ='';
+    $('#close').modal('hide');
+}
+
+
+
 function showMovies(movies, element_selector, path_type ){
 
     var moviesEl = document.querySelector(element_selector);
