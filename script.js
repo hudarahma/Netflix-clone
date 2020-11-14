@@ -11,7 +11,7 @@ window.onload = () =>  {
 
 
 
-async function getMovieTrailer(id) {
+const getMovieTrailer = async (id) => {
     var url =   `https://api.themoviedb.org/3/movie/${id}/videos?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US&page=1`;
    return await fetch(url)
     .then((response)=>{
@@ -46,7 +46,7 @@ const setMoveiDetail = (details) => {
 }
 
 
-function getMovieDetail(id) {
+getMovieDetail = (id) => {
     var url = `https://api.themoviedb.org/3/movie/${id}?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US`;
     fetch(url)
     .then((response) => {
@@ -96,7 +96,7 @@ const handleMovieSelection = (e) => {
 }
 
 
-function closeModal(){
+closeModal = () => {
     
     const iframe = document.getElementById('movieTrailer');
     iframe.src ='';
@@ -105,7 +105,7 @@ function closeModal(){
 
 
 
-function showMovies(movies, element_selector, path_type ){
+showMovies = (movies, element_selector, path_type ) => {
 
     var moviesEl = document.querySelector(element_selector);
 
@@ -129,7 +129,7 @@ function showMovies(movies, element_selector, path_type ){
    
 }
 
- function fetchMovieBaseOnGenre(genreId) {
+fetchMovieBaseOnGenre = (genreId) => {
 
     var url = 'https://api.themoviedb.org/3/discover/movie?';
     url += 'api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1';
@@ -146,7 +146,7 @@ function showMovies(movies, element_selector, path_type ){
 }
 
 
-function fetchMovies(url, element_selector, path_type ){
+fetchMovies = (url, element_selector, path_type ) => {
     fetch(url)
     .then((response)=>{
         if (response.ok) {
@@ -164,21 +164,21 @@ function fetchMovies(url, element_selector, path_type ){
 }
 
 
-function showMoviesGenres(genres) {
+showMoviesGenres = (genres) => {
     // console.log(genres);
     genres.genres.forEach(genre =>{
         // get list of movies
         var movies = fetchMovieBaseOnGenre(genre.id)
-        movies.then(function(movies){
+        movies.then((movies)=>{
             showMovieBasedOnGenre(genre.name, movies);
-        }).catch(function(error){
+        }).catch((error)=>{
             console.log(error);
         })
     })
     
 }
 
-function showMovieBasedOnGenre(genreName, movies){
+showMovieBasedOnGenre = (genreName, movies) => {
     let allMovies = document.querySelector('.movies');
 
     let genreEl = document.createElement('div');
@@ -213,7 +213,7 @@ function showMovieBasedOnGenre(genreName, movies){
 
 
 
-function getGenres() {
+getGenres = () => {
 
     var url = "https://api.themoviedb.org/3/genre/movie/list?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US";
     fetch(url)
@@ -234,17 +234,17 @@ function getGenres() {
 
 
 
-function getOriginals(){
+getOriginals = () =>{
     var url = "https://api.themoviedb.org/3/discover/tv?api_key=19f84e11932abbc79e6d83f82d6d1045&with_networks=213";
     fetchMovies(url, ".original__movies", "poster_path");
 }
 
-function getTrendingNow(){
+getTrendingNow = () =>{
     var url = "https://api.themoviedb.org/3/trending/movie/week?api_key=19f84e11932abbc79e6d83f82d6d1045"
     fetchMovies(url, '#trending', 'backdrop_path' );
 }
 
-function getTopRated(){
+getTopRated = () =>{
     var url = "https://api.themoviedb.org/3/movie/top_rated?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US&page=1"
     fetchMovies(url, "#top_rated", "backdrop_path");
 }
