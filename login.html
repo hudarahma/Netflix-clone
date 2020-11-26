@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
     <title>Login</title>
+    
 </head>
 <body>
     <section >
@@ -18,15 +19,15 @@
                 <h2>Login</h2>
             </div>
             <div class="username">
-                <span>Username</span>
-                <input type="text" class="user-name-input" placeholder='Email'>
+                <span>Email</span>
+                <input type="text" id = 'email' class="user-name-input" placeholder='Email'>
             </div>
             <div class="password">
                 <span>Password</span>
-                <input type="text" class="user-password-input" placeholder="Password">
+                <input type="text" id ='password' class="user-password-input" placeholder="Password">
             </div>
             <div class="login-button">
-                <span>LOGIN</span>
+                <span id="button" onclick="checkInfo()">LOGIN</span>
             </div>
             <div class="text">
                 <span>Have not account yet?</span>
@@ -34,6 +35,6 @@
             </div>
         </div>
     </section>
-   
+    <script type="text/javascript" src="log.js"></script>
 </body>
 </html>
