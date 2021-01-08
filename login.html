@@ -18,20 +18,37 @@
             <div class="login-text">
                 <h2>Login</h2>
             </div>
-            <div class="username">
-                <span>Email</span>
-                <input type="text" id = 'email' class="user-name-input" placeholder='Email'>
-            </div>
-            <div class="password">
-                <span>Password</span>
-                <input type="text" id ='password' class="user-password-input" placeholder="Password">
-            </div>
-            <div class="login-button">
-                <span id="button" onclick="checkInfo()">LOGIN</span>
-            </div>
+            <!-- <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-danger btn-lg">Submit</button>
+              </form> -->
+            <form id="login-form">
+                <div class="username">
+                    <span>Email</span>
+                    <input type="text" name = 'email' class="user-name-input" placeholder='Email'>
+                </div>
+                <div class="password">
+                    <span>Password</span>
+                    <input type="password" name ='password' class="user-password-input" placeholder="Password">
+                </div>
+                <div class="login-button">
+                    <!-- <span id="button" onclick="">LOGIN</span> -->
+                    <button type="submit"  >LOGIN</button>
+                </div>
+            </form>
+         
+            <div id="success-info" hidden><span >Success</span></div>
+            <div id='not-valid' hidden><span>Not Valid</span></div>
             <div class="text">
-                <span>Have not account yet?</span>
-                <a href="sing-up">SIGN UP</a>
+                <span>Don't have an account yet?</span>
+                <a href="/register.html">SIGN UP</a>
             </div>
         </div>
     </section>

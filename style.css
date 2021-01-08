@@ -6,6 +6,33 @@ body {
 
 }
 
+.dropdown-container {
+    top: 100%;
+    right: 0; 
+    position: absolute;
+    margin-top: 3px;
+    
+}
+
+.dropdown {
+    background-color: black;
+    padding: 8px;
+    border-radius: 4px;
+    width: 100px;
+    opacity: 0;
+   
+    
+}
+
+.dropdown span {
+    cursor: pointer;
+}
+
+/* .dropdown:hover {
+    opacity: 1;
+} */
+
+
 .original__movies {
     padding-top: 20px;
     padding-bottom: 20px;

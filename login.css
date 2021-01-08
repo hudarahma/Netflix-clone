@@ -66,12 +66,20 @@ img {
     padding-bottom: 40px;
 }
 
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .username , .password {
     font-size: 20px;
     padding: 10px;
     width: 100%;
     display: flex;
     flex-direction: column;
+    outline-offset: unset;
 }
 
 .username span , .password span {
@@ -90,8 +98,8 @@ img {
 }
 
 .login-button {
-    width: 70%;
-    height: 5%;
+    width: 100%;
+    height: 20%;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -102,12 +110,20 @@ img {
     background-color: rgb(145, 22, 22);
 }
 
-.login-button span {
+.login-button button {
+    background-color: transparent;
+    border: none;
+    color: white;
     font-size: 20px;
-    letter-spacing: 2px;
-    padding-bottom: 10px;
+    cursor: pointer;
+    outline: none;
 }
 
+#success-info, #not-valid {
+    font-size: 20px;
+    color: green;
+    padding-top: 10px;
+}
 .text {
     display: flex;
     justify-content: center;
